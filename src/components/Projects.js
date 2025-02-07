@@ -20,31 +20,37 @@ export const Projects = () => {
       title: "Canalyse2025",
       description: "Development & ML & Design",
       imgUrl: can,
+      githubUrl :"#",
     },
     {
       title: "Mapping the Global Entertainment Impact",
       description: "Big Data & Data Mining & Data Analysis ",
       imgUrl: kafka,
+      githubUrl :"https://github.com/HACHIMIATMANE/TrendWave_Mapping-the-Global-Entertainment-Impact.git",
     },
     {
       title: "Cars Counter",
       description: "MachineLearning & DeepLearning",
       imgUrl: car,
+      githubUrl :"https://github.com/HACHIMIATMANE/CarsConunter.git",
     },
     {
       title: "GeoService Scraper",
-      description: "utomation & Scraping & Development",
+      description: "Automation & Scraping & Development",
       imgUrl: maps,
+      githubUrl :"https://github.com/HACHIMIATMANE/Automation_Scraping_GoogleMaps.git",
     },
     {
       title: "Time Series Forecasting",
       description: "Time Series & Data Analysis",
       imgUrl: timeseries,
+      githubUrl :"https://github.com/HACHIMIATMANE/ARIMA_SARIMA_LSTM_models.git",
     },
     {
       title: "ShopAcc",
       description: "Development & ML & Data",
       imgUrl: game,
+      githubUrl :"https://github.com/HACHIMIATMANE/SiteGame.git",
     },
     
   ];
