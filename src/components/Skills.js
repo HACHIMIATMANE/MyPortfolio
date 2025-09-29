@@ -1,83 +1,188 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-import colorSharp from "../assets/img/color-sharp.png"
+import { Container, Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import colorSharp from "../assets/img/color-sharp.png";
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [animatedCards, setAnimatedCards] = useState(new Set());
+
+  const skillsData = [
+    {
+      id: 1,
+      title: "Data Engineer",
+      category: "data-engineering",
+      level: 88,
+      icon: "🛢️", // Database icon
+      color: "#FF6B35",
+      description: "AWS, GCP, Snowflake, Terraform, Apache Airflow, Apache Kafka, Cassandra"
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
+    {
+      id: 2,
+      title: "Machine Learning & Deep Learning",
+      category: "ai",
+      level: 92,
+      icon: "🤖", // Robot icon
+      color: "#4ECDC4",
+      description: "PyTorch, YOLO, OpenCV, Whisper, LangChain, FAISS, ChromaDB, Ollama, LLM, Scikit-learn"
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
+    {
+      id: 3,
+      title: "Développement Front & Back",
+      category: "development",
+      level: 85,
+      icon: "💻", // Laptop icon
+      color: "#45B7D1",
+      description: "Java, Scala, FastAPI, Flask, Django, HTML, CSS, JavaScript, React.js"
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
+    {
+      id: 4,
+      title: "Web Scraping / Automatisation",
+      category: "automation",
+      level: 90,
+      icon: "🕷️",
+      color: "#96CEB4",
+      description: "Selenium, BeautifulSoup, Scrapy, Crawl4AI"
+    },
+    {
+      id: 5,
+      title: "Outils & Environnements",
+      category: "tools",
+      level: 85,
+      icon: "🛠️", // Hammer and wrench icon
+      color: "#F39C12",
+      description: "Git, GitHub, GitLab, Docker, Jenkins, DBeaver"
+    },
+    {
+      id: 6,
+      title: "Data Science & Analysis",
+      category: "data-science",
+      level: 93,
+      icon: "📊",
+      color: "#9B59B6",
+      description: "Python, R, Pandas, SQL, Excel, Power BI, Roboflow"
+    },
+    {
+      id: 7,
+      title: "Big Data",
+      category: "big-data",
+      level: 80,
+      icon: "🗂️", // Card index dividers icon
+      color: "#E74C3C",
+      description: "Apache Spark Streaming, HBase"
+    },
+    {
+      id: 8,
+      title: "Soft Skills",
+      category: "soft-skills",
+      level: 88,
+      icon: "🧠",
+      color: "#1ABC9C",
+      description: "Résolution de problèmes, Adaptabilité, Travail en équipe, Communication, Apprentissage rapide, Discipline"
     }
+  ];
+
+  const categories = [
+    { id: "all", label: "Tous", icon: "🚀" },
+    { id: "data-engineering", label: "Data Engineering", icon: "�" },
+    { id: "ai", label: "Machine Learning & IA", icon: "🤖" },
+    { id: "development", label: "Développement", icon: "💻" },
+    { id: "automation", label: "Web Scraping", icon: "�️" },
+    { id: "tools", label: "Outils", icon: "🛠️" },
+    { id: "data-science", label: "Data Science", icon: "📊" },
+    { id: "big-data", label: "Big Data", icon: "🗂️" },
+    { id: "soft-skills", label: "Soft Skills", icon: "🧠" }
+  ];
+
+  const filteredSkills = activeCategory === "all" 
+    ? skillsData 
+    : skillsData.filter(skill => skill.category === activeCategory);
+
+  const handleCardAnimation = (skillId) => {
+    setAnimatedCards(prev => new Set([...prev, skillId]));
   };
 
   return (
     <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>Grâce à mes expériences en science des données, développement logiciel et cloud computing, j’ai acquis une expertise dans plusieurs domaines techniques. Je maîtrise des outils et technologies essentiels pour la gestion et l’analyse de données, le développement d’applications performantes et l’optimisation de systèmes big data.
+      <Container>
+        <Row>
+          <Col size={12}>
+            <TrackVisibility>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <div className="skill-bx">
+                    <h2>Mes Compétences</h2>
+                    <p>
+                      Découvrez mon expertise technique acquise à travers mes expériences en IA, développement web, 
+                      et science des données. Chaque compétence représente des années d'apprentissage et de pratique 
+                      dans des projets concrets.
+                    </p>
 
-                              Voici un aperçu de mes principales compétences :
-                        </p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Data Mining</h5>
-                                <p>SQL, Pandas, NumPy, Scikit-learn, Power BI</p>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Machine Learning</h5>
-                                <p>Python, TensorFlow, Keras, PyTorch, YOLO, OpenCV</p>
-
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Web Development</h5>
-                                <p>HTML, CSS, JavaScript, React, Flask, Django, MongoDB, PostgreSQL</p>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Big Data</h5>
-                                <p>Spark, Hadoop, Hive, Kafka, Cassandra</p>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Cloud Computing</h5>
-                                <p> Docker, Kubernetes, OpenStack, AWS, Google Cloud</p>
-                            </div>
-                            
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Sécurité et Système</h5>
-                                <p> OpenStack, Sécurité des API, Authentification par reconnaissance faciale, Configuration réseau</p>
-                            </div>
-                        </Carousel>
+                    {/* Categories Filter */}
+                    <div className="skill-categories">
+                      {categories.map((category) => (
+                        <button
+                          key={category.id}
+                          className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+                          onClick={() => setActiveCategory(category.id)}
+                        >
+                          <span className="category-icon">{category.icon}</span>
+                          <span className="category-label">{category.label}</span>
+                        </button>
+                      ))}
                     </div>
+
+                    {/* Skills Grid */}
+                    <div className="skills-grid">
+                      {filteredSkills.map((skill, index) => (
+                        <TrackVisibility key={skill.id} partialVisibility={true}>
+                          {({ isVisible }) => {
+                            if (isVisible && !animatedCards.has(skill.id)) {
+                              setTimeout(() => handleCardAnimation(skill.id), index * 100);
+                            }
+                            return (
+                              <div 
+                                className={`skill-card ${isVisible ? 'animate__animated animate__fadeInUp' : ''}`}
+                                style={{ 
+                                  animationDelay: `${index * 0.1}s`,
+                                  '--skill-color': skill.color 
+                                }}
+                              >
+                                <div className="skill-icon">{skill.icon}</div>
+                                <h4>{skill.title}</h4>
+                                <p>{skill.description}</p>
+                                
+                                <div className="skill-level">
+                                  <div className="level-label">
+                                    <span>Niveau</span>
+                                    <span>{skill.level}%</span>
+                                  </div>
+                                  <div className="progress-bar">
+                                    <div 
+                                      className="progress-fill"
+                                      style={{ 
+                                        width: isVisible ? `${skill.level}%` : '0%',
+                                        backgroundColor: skill.color,
+                                        transition: 'width 1.5s ease-in-out'
+                                      }}
+                                    ></div>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          }}
+                        </TrackVisibility>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+              }
+            </TrackVisibility>
+          </Col>
+        </Row>
+      </Container>
+      <img className="background-image-left" src={colorSharp} alt="Background" />
     </section>
-  )
-}
+  );
+};

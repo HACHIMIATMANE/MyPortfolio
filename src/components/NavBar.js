@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import navIcon3 from '../assets/img/mail2.svg';
 import navIcon4 from '../assets/img/nav-icon4.svg';
-import logo2 from '../assets/img/logo2.png';
 
-import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
@@ -37,30 +34,48 @@ export const NavBar = () => {
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar expand="md" className={scrolled ? "scrolled modern-navbar" : "modern-navbar"}>
         <Container>
-          <Navbar.Brand href="/">
-            <img src={logo2} alt="Logo" />
+          <Navbar.Brand href="/" className="navbar-brand-name">
+            <span className="brand-name">HACHIMI ATMANE</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+            <Nav className="ms-auto modern-nav">
+              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('home')}>
+                <span className="nav-text">Accueil</span>
+              </Nav.Link>
+              <Nav.Link href="#experiences" className={activeLink === 'experiences' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('experiences')}>
+                <span className="nav-text">Expériences</span>
+              </Nav.Link>
+              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('skills')}>
+                <span className="nav-text">Compétences</span>
+              </Nav.Link>
+              
+              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('projects')}>
+                <span className="nav-text">Projets</span>
+              </Nav.Link>
+              <Nav.Link href="#connect" className={activeLink === 'contact' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('contact')}>
+                <span className="nav-text">Contact</span>
+              </Nav.Link>
             </Nav>
-            <span className="navbar-text">
-              <div className="social-icon">
-                <a href="https://www.linkedin.com/in/atmane-hachimi-25158b294/"><img src={navIcon1} alt="" /></a>
-                <a href="https://github.com/HACHIMIATMANE"><img src={navIcon2} alt="" /></a>
-                <a href="hachimiatmane03@gmail.com"><img src={navIcon3} alt="" /></a>
-                <a href="https://www.instagram.com/hachimi.atmane/"><img src={navIcon4} alt="" /></a>
+            <span className="navbar-text modern-social">
+              <div className="social-icon modern-social-icons">
+                <a href="https://www.linkedin.com/in/atmane-hachimi-25158b294/" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <img src={navIcon1} alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/HACHIMIATMANE" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <img src={navIcon2} alt="GitHub" />
+                </a>
+                <a href="mailto:hachimiatmane03@gmail.com" className="social-link">
+                  <img src={navIcon3} alt="Email" />
+                </a>
+                <a href="https://www.instagram.com/hachimi.atmane/" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <img src={navIcon4} alt="Instagram" />
+                </a>
               </div>
-              <HashLink to='#connect'>
-                <button className="vvd"><span>Let’s Connect</span></button>
-              </HashLink>
             </span>
           </Navbar.Collapse>
         </Container>

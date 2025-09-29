@@ -1,36 +1,48 @@
-# Personal Portfolio Website in React
+# 🚀 Portfolio HACHIMI ATMANE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📋 Description
+Portfolio professionnel moderne présentant les compétences, expériences et projets de HACHIMI ATMANE, ingénieur spécialisé en Data Engineering, Data Science et développement logiciel.
 
-<img width="1266" alt="Screen Shot 2022-06-19 at 2 18 18 PM" src="https://user-images.githubusercontent.com/50160672/174933373-1ba6cadf-1c9a-48c3-aa58-984d0bd62d82.png">
+## 🛠️ Technologies Utilisées
+- **Frontend**: React.js, Bootstrap, CSS3
+- **Animations**: Animate.css, React-on-screen
+- **Routing**: React Router
+- **Build**: Create React App
+- **Déploiement**: GitHub Pages
 
-Built using:
+## ✨ Fonctionnalités
+- 🎨 Design moderne et responsive
+- 🌟 Animations fluides et interactives
+- 📱 Compatible mobile et desktop
+- 🔗 Navigation smooth scroll
+- 📄 Téléchargement CV intégré
+- 🎯 Sections organisées (Skills, Expériences, Projets, Contact)
+- 🌈 Palette de couleurs cohérente
 
-- Front-end library: React
-- CSS framework: React-bootstrap
-- CSS animations library: Animate.css
+## 🚦 Démarrage Rapide
 
-In the /personal-portfolio, you can run:
+### Prérequis
+- Node.js (version 14+)
+- npm ou yarn
 
-### `npm start`
+### Installation
+```bash
+git clone https://github.com/HACHIMIATMANE/MyPortfolio.git
+cd MyPortfolio
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Développement
+```bash
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Build de Production
+```bash
+npm run build
+```
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Déploiement GitHub Pages
+```bash
+npm run deploy
+```
