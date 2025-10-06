@@ -75,7 +75,7 @@ export const Banner = () => {
                   <div className="description-container">
                     <p className="main-description">
                       Ingénieur spécialisé en <strong>Data Engineer</strong>, <strong>Data Science</strong>, <strong>Machine-Learning & Deep-Learning</strong> et <strong>Développement Logiciel</strong>. 
-                      J'ai acquis une solide expérience à travers divers projets en Machine Learning, BigData,Data engineering , Développement Web et Cloud Computing.
+                      J'ai acquis une solide expérience à travers diverses expériences professionnelles en Machine Learning, BigData, Data engineering, Développement Web et Cloud Computing.
                     </p>
                     
                     

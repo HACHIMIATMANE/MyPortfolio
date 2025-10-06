@@ -12,12 +12,34 @@ import projImg1 from "../assets/img/rag.png"; // Pour assistant juridique
 import projImg2 from "../assets/img/pneumonia.png"; // Pour pneumonia detection
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import kubernetes from "../assets/img/kubernetes.png"; 
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
+
+    {
+      id: 10,
+        title: "Kubernetes for Data Engineering",
+      shortDescription: "Maîtriser Kubernetes pour l’ingénierie des données",
+      fullDescription: "Plongez dans l’univers de Kubernetes, l’outil incontournable pour la gestion des applications conteneurisées, et découvrez ses applications concrètes dans le domaine de l’ingénierie des données.",
+      imgUrl: kubernetes,
+      githubUrl: "https://github.com/HACHIMIATMANE/Kubernetes_for_dataengineer.git",
+      liveUrl: "#",
+      category: "bigdata",
+      technologies: ["Kubernetes", "Docker", "kubectl", "Helm", "Apache Airflow"],
+      status: "Terminé",
+      year: "2025",
+      difficulty: "Expert",
+      features: [
+        "Installation de Kubernetes sur Docker",
+        "Prise en main de kubectl",
+        "Déploiement du Dashboard Kubernetes",
+        "Exécution d’Apache Airflow avec Helm Charts"
+      ]
+    },
 
     {
       id: 7,
@@ -30,7 +52,7 @@ export const Projects = () => {
       category: "ai",
       technologies: ["Python", "LangChain", "ChromaDB", "Ollama", "Mistral", "Streamlit"],
       status: "Terminé",
-      year: "2024",
+      year: "2025",
       difficulty: "Expert",
       features: ["RAG Architecture", "Code du travail marocain", "Interface Streamlit", "Recherche sémantique"]
     },
@@ -45,7 +67,7 @@ export const Projects = () => {
       category: "bigdata",
       technologies: ["Apache Kafka", "Apache Spark Streaming", "Cassandra", "Apache Airflow", "Docker", "Python"],
       status: "Terminé",
-      year: "2024",
+      year: "2025",
       difficulty: "Expert",
       features: ["Stream Processing", "Pipeline Kafka", "Orchestration Airflow", "Architecture microservices"]
     },
@@ -60,7 +82,7 @@ export const Projects = () => {
       category: "ai",
       technologies: ["ResNet34", "Transfer Learning", "Python", "Flask", "React.js", "Gradio", "Hugging Face"],
       status: "Terminé",
-      year: "2024",
+      year: "2025",
       difficulty: "Expert",
       features: ["Deep Learning médical", "Transfer Learning", "Interface Gradio", "Déploiement Hugging Face"]
     },
@@ -77,7 +99,7 @@ export const Projects = () => {
       category: "web",
       technologies: ["Python", "Machine Learning", "FastAPI", "React"],
       status: "En Terminé",
-      year: "2025",
+      year: "2024",
       difficulty: "Expert",
       features: ["ML Pipeline", "Dashboard Interactif", "API RESTful", "Visualisation avancée"]
     },
