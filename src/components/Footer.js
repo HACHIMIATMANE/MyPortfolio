@@ -98,7 +98,7 @@ export const Footer = () => {
           </Col>
           <Col md={6} className="footer-copyright">
             <p>&copy; 2025 Hachimi Atmane. Tous droits réservés.</p>
-            <p className="built-with">Développé avec ❤️ et React.js</p>
+            
           </Col>
         </Row>
       </Container>
