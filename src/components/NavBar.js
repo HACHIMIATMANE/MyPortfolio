@@ -50,12 +50,19 @@ export const NavBar = () => {
               <Nav.Link href="#experiences" className={activeLink === 'experiences' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('experiences')}>
                 <span className="nav-text">Expériences</span>
               </Nav.Link>
+              <Nav.Link href="#academic" className={activeLink === 'academic' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('academic')}>
+                <span className="nav-text">Education</span>
+              </Nav.Link>
+              
               <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('skills')}>
                 <span className="nav-text">Compétences</span>
               </Nav.Link>
               
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('projects')}>
                 <span className="nav-text">Projets</span>
+              </Nav.Link>
+              <Nav.Link href="#certifications" className={activeLink === 'certifications' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('certifications')}>
+                <span className="nav-text">Certifications</span>
               </Nav.Link>
               <Nav.Link href="#connect" className={activeLink === 'contact' ? 'active navbar-link modern-link' : 'navbar-link modern-link'} onClick={() => onUpdateActiveLink('contact')}>
                 <span className="nav-text">Contact</span>

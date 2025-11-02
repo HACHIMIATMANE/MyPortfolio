@@ -108,7 +108,7 @@ nav.navbar .navbar-brand-name {
 }
 
 .brand-name {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   background: linear-gradient(45deg, #AA367C, #4A2FBD, #7C4DFF, #E91E63);
   background-size: 400% 400%;
@@ -116,7 +116,7 @@ nav.navbar .navbar-brand-name {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 3s ease-in-out infinite;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   position: relative;
   text-transform: uppercase;
 }
@@ -141,27 +141,71 @@ nav.navbar .navbar-brand-name {
   50% { background-position: 100% 50%; }
 }
 
+@media (max-width: 991px) {
+  .modern-nav {
+    gap: 5px;
+  }
+  
+  .modern-link {
+    padding: 6px 10px !important;
+    margin: 0 1px;
+  }
+  
+  .modern-link .nav-text {
+    font-size: 13px;
+    letter-spacing: 0.2px;
+  }
+  
+  .brand-name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modern-nav {
+    gap: 2px;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .modern-link {
+    width: 100%;
+    margin: 2px 0;
+  }
+  
+  .navbar-collapse {
+    background: rgba(18, 18, 18, 0.95);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+}
+
 /* Modern Navigation Links */
 .modern-nav {
-  gap: 15px;
+  gap: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .modern-link {
   position: relative;
   overflow: hidden;
-  padding: 12px 20px !important;
-  margin: 0 5px;
-  border-radius: 25px;
+  padding: 8px 12px !important;
+  margin: 0 2px;
+  border-radius: 20px;
   transition: all 0.3s ease;
   background: transparent;
   border: 1px solid transparent;
+  white-space: nowrap;
 }
 
 .modern-link .nav-text {
   font-weight: 500;
   color: #fff;
-  letter-spacing: 0.5px;
-  font-size: 16px;
+  letter-spacing: 0.3px;
+  font-size: 14px;
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
